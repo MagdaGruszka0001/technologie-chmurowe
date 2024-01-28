@@ -4,8 +4,10 @@ import cv2
 
 app = Flask(__name__)
 api = Api(app)
+
 hog = cv2.HOGDescriptor()
 hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
+
 
 class PeopleCounter(Resource):
     def get(self):
